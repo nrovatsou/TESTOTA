@@ -10,6 +10,7 @@ from time import sleep
 
 def download_and_install_update_if_available():
      o = OTAUpdater('https://github.com/nrovatsou/TESTOTA')
+     o.check_for_update_to_install_during_next_reboot()
      o.install_update_if_available_after_boot('COSMOTE-179663', 'DYR7K3QY7HDU469A')
 
 def start():
