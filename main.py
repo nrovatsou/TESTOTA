@@ -9,8 +9,8 @@ from time import sleep
 
 
 def download_and_install_update_if_available():
-     o = OTAUpdater('url-to-your-github-project')
-     o.install_update_if_available_after_boot('wifi-ssid', 'wifi-password')
+     o = OTAUpdater('https://github.com/nrovatsou/TESTOTA.git')
+     o.install_update_if_available_after_boot('COSMOTE-179663', 'DYR7K3QY7HDU469A')
 
 def start():
      # your custom code goes here. Something like this: ...
