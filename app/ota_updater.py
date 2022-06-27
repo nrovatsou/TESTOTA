@@ -7,7 +7,7 @@ class OTAUpdater:
     optimized for low power usage.
     """
 
-    def __init__(self, github_repo, github_src_dir='', module='', main_dir='', new_version_dir='next', secrets_file=None, headers={}):
+    def __init__(self, github_repo, github_src_dir='', module='', main_dir='app', new_version_dir='next', secrets_file=None, headers={}):
         self.http_client = HttpClient(headers=headers)
         self.github_repo = github_repo.rstrip('/').replace('https://github.com/', '')
         self.github_src_dir = '' if len(github_src_dir) < 1 else github_src_dir.rstrip('/') + '/'
@@ -102,6 +102,8 @@ class OTAUpdater:
         print('network config:', sta_if.ifconfig())
 
     def _check_for_new_version(self):
+        print("Main Dir is: ", self.main_dir)
+        print("modulepath: ", self.modulepath(self.main_dir))
         current_version = self.get_version(self.modulepath(self.main_dir))
         latest_version = self.get_latest_version()
 
@@ -126,6 +128,7 @@ class OTAUpdater:
         return '0.0'
 
     def get_latest_version(self):
+        print("GitHub Repo is: ", 'https://api.github.com/repos/{}/releases/latest'.format(self.github_repo))
         latest_release = self.http_client.get('https://api.github.com/repos/{}/releases/latest'.format(self.github_repo))
         print("Latest R: ", latest_release)
         gh_json = latest_release.json()
