@@ -19,7 +19,7 @@ def start():
      # ...
     import tasos 
 
-    print("Starting ....")
+    print("Starting R1....")
     tasos.connectwifi()
     tasos.Internetime()
     tasos.x()
@@ -29,7 +29,7 @@ def start():
 
 
 def boot():
-     #download_and_install_update_if_available()
+     download_and_install_update_if_available()
      start()
 
 
