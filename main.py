@@ -13,6 +13,11 @@ def download_and_install_update_if_available():
      
      tasos.connectwifi()
      o = OTAUpdater('https://github.com/nrovatsou/TESTOTA')
+     print("-------------------------------")
+     print("GitHub Repo", o.github_repo)
+     print("Main dir: ", o.main_dir)
+     print("New version dir: ", o.new_version_dir)
+     print("----------------------------------------")
      o.check_for_update_to_install_during_next_reboot()
      o.install_update_if_available_after_boot('COSMOTE-179663', 'DYR7K3QY7HDU469A')
 
@@ -23,7 +28,7 @@ def start():
      # ...
     import tasos 
 
-    print("Starting R1....")
+    print("Starting R2....")
     
     tasos.Internetime()
     tasos.x()

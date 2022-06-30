@@ -7,7 +7,7 @@ def x():
  print("This is x")
 
 def maint():
- print("Hello it works")
+ print("Hello it works with new release")
 
 
 def deep (duration):
